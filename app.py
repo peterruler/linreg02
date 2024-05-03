@@ -41,13 +41,13 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 # Reload the model from the 2 files we saved
 with open('model_config.json') as json_file:
     json_config = json_file.read()
-flower_model = model_from_json(json_config.encode('utf-8'))
+gem_model = model_from_json(json_config.encode('utf-8'))
 # Load weights
-flower_model.load_weights('weights_only.h5')
+gem_model.load_weights('weights_only.h5')
 
 scaler = pickle.load(open('scaler.sav', 'rb'))
 
-class FlowerForm(FlaskForm):
+class GemForm(FlaskForm):
     feat1 = StringField('Feature 1')
     feat2 = StringField('Feature 2')
 
@@ -56,7 +56,7 @@ class FlowerForm(FlaskForm):
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-    form = FlowerForm()
+    form = GemForm()
     if form.validate_on_submit():
 
         session['feat1'] = form.feat1.data
@@ -74,7 +74,7 @@ def prediction():
     content['feat1'] = float(session['feat1'])
     content['feat2'] = float(session['feat2'])
 
-    results = return_prediction(model=flower_model,scaler=scaler,sample_json=content)
+    results = return_prediction(model=gem_model,scaler=scaler,sample_json=content)
 
     return render_template('prediction.html',results=results)
 
