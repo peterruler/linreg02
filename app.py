@@ -16,7 +16,7 @@ def return_prediction(model,scaler,sample_json):
     
     feat1 = sample_json['feat1']
     feat2 = sample_json['feat2']
-    print(feat1+ " " + feat2)
+    print(f' {feat1}  {feat2}')
     new_gem = [[feat1,feat2]]
     new_gem = scaler.transform(new_gem)
     from tensorflow.keras.models import load_model
