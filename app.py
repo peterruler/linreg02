@@ -19,10 +19,13 @@ def return_prediction(model,scaler,sample_json):
     print(f' {feat1}  {feat2}')
     new_gem = [[feat1,feat2]]
     new_gem = scaler.transform(new_gem)
-    from tensorflow.keras.models import load_model
-    later_model = load_model('my_model.h5')
-    value = later_model.predict(new_gem)
-    return value
+    
+    print(f' {new_gem}')
+    return 1
+    ' from tensorflow.keras.models import load_model
+    ' later_model = load_model('my_model.h5')
+    ' value = later_model.predict(new_gem)
+    
     '''
     with graph.as_default():
         predict=model.predict(new_gem2) 
