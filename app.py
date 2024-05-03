@@ -9,7 +9,6 @@ import numpy as np
 import pickle
 
 def return_prediction(model,scaler,sample_json):
-
     graph = tf.get_default_graph()
     
     feat1 = sample_json['feat1']
@@ -20,7 +19,8 @@ def return_prediction(model,scaler,sample_json):
     with graph.as_default():
         predict=model.predict(new_gem2) 
     
-    return predict
+    data = toDict(predict)
+    return flask.jsonify(data)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
