@@ -16,13 +16,12 @@ def return_prediction(model,scaler,sample_json):
     
     feat1 = sample_json['feat1']
     feat2 = sample_json['feat2']
-    
-    new_gem2 = [[feat1,feat2]]
-    new_gem2 = scaler.transform(new_gem2)
-    '''model = tensorflow.keras.models.load_model('my_model.h5')'''
-    
-    predict_x=model.predict(new_gem2) 
-    value =np.argmax(predict_x,axis=1)
+    print(feat1+ " " + feat2)
+    new_gem = [[feat1,feat2]]
+    new_gem = scaler.transform(new_gem)
+    from tensorflow.keras.models import load_model
+    later_model = load_model('my_model.h5')
+    value = later_model.predict(new_gem)
     return value
     '''
     with graph.as_default():
