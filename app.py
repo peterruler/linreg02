@@ -32,7 +32,7 @@ flower_model=load_model("my_model.h5")
 # Reload the model from the 2 files we saved
 with open('model_config.json') as json_file:
     json_config = json_file.read()
-flower_model = model_from_json(json_config)
+flower_model = model_from_json(json_config.encode())
 # flower_model = tf.keras.models.model_from_json(json_config)
 # Load weights
 flower_model.load_weights('weights_only.h5')
