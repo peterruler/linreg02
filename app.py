@@ -4,7 +4,7 @@ from wtforms import SubmitField, StringField
 from wtforms.validators import NumberRange
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
 from tensorflow.keras.models import model_from_json
 import numpy as np 
 import pickle
@@ -24,7 +24,7 @@ def return_prediction(model,scaler,sample_json):
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
-flower_model = load_model("my_model.h5")
+# flower_model = load_model("my_model.h5")
 # In tensorflow 1.10
 # Reload the model from the 2 files we saved
 with open('model_config.json') as json_file:
