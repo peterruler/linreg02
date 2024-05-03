@@ -19,6 +19,7 @@ def return_prediction(model,scaler,sample_json):
     
     new_gem2 = [[feat1,feat2]]
     new_gem2 = scaler.transform(new_gem2)
+    model = tensorflow.keras.models.load_model('my_model.h5')
     with graph.as_default():
         predict=model.predict(new_gem2) 
         data = toDict(predict)
