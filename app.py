@@ -3,7 +3,9 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
 from wtforms.validators import NumberRange
 # from tensorflow.keras.models import load_model
-import keras.models import load_model
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.models import load_model
 import numpy as np 
 import pickle
 
