@@ -68,7 +68,7 @@ def prediction():
 
     results = return_prediction(model=flower_model,scaler=scaler,sample_json=content)
 
-    return render_template('prediction.html',results=results[0][0])
+    return render_template('prediction.html',results=results)
 
 
 if __name__ == '__main__':
