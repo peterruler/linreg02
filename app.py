@@ -25,7 +25,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 # flower_model = load_model("my_model.h5")
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 flower_model=load_model("my_model.h5")
 
 # In tensorflow 1.10
