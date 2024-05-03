@@ -25,8 +25,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 
 # flower_model = load_model("my_model.h5")
-from tensorflow.keras.models import load_model
-flower_model=load_model("my_model.h5")
+# from tensorflow.keras.models import load_model
+# flower_model=load_model("my_model.h5")
 
 # In tensorflow 1.10
 # Reload the model from the 2 files we saved
