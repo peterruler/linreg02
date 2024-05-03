@@ -18,8 +18,7 @@ def return_prediction(model,scaler,sample_json):
     new_gem2 = scaler.transform(new_gem2)
     with graph.as_default():
         predict=model.predict(new_gem2) 
-    
-    data = toDict(predict)
+        data = toDict(predict)
     return flask.jsonify(data)
 
 app = Flask(__name__)
