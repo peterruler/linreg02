@@ -7,8 +7,11 @@ from tensorflow import keras
 from tensorflow.keras.models import model_from_json
 import numpy as np 
 import pickle
+from keras.backend import clear_session
 
 def return_prediction(model,scaler,sample_json):
+    clear_session()
+
     graph = tf.get_default_graph()
     
     feat1 = sample_json['feat1']
