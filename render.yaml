@@ -3,7 +3,7 @@ services:
 - type: web
   name: linreg
   runtime: python
-  repo: https://github.com/peterruler/linreg02-
+  repo: https://github.com/peterruler/linreg02
   plan: free
   envVars:
   - key: PORT
