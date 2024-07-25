@@ -1,9 +1,7 @@
 from flask import Flask, render_template, session, redirect, url_for, session
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, StringField
-from wtforms.validators import NumberRange
 from tensorflow.keras.models import load_model  
-import numpy as np 
 import pickle
 
 def return_prediction(model,scaler,sample_json):
