@@ -50,8 +50,9 @@ def prediction():
     content['feat2'] = float(session['feat2'])
 
     results = return_prediction(model=flower_model,scaler=scaler,sample_json=content)
-
-    return render_template('prediction.html',results=results[0][0])
+    gerundeter_wert = round(results[0][0] * 20) / 20
+    res = round(gerundeter_wert, 2)
+    return render_template('prediction.html',results=res)
 
 
 if __name__ == '__main__':
